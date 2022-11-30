@@ -1,17 +1,19 @@
 import { Router } from "express";
 import multer from "multer";
 import path from "node:path";
-import { createCategory } from "./app/useCases/categories/createCategory";
-import { deleteCategory } from "./app/useCases/categories/deleteCategory";
-import { listCategories } from "./app/useCases/categories/listCategories";
-import { listProductsByCategory } from "./app/useCases/categories/listProductsByCategory";
-import { cancelOrder } from "./app/useCases/orders/cancelOrder";
-import { changeOrderStatus } from "./app/useCases/orders/changeOrderStatus";
-import { createOrder } from "./app/useCases/orders/createOrder";
-import { listOrders } from "./app/useCases/orders/listOrders";
-import { createProduct } from "./app/useCases/products/createProduct";
-import { deleteProduct } from "./app/useCases/products/deleteProduct";
-import { listProducts } from "./app/useCases/products/listProducts";
+import {
+  cancelOrder,
+  changeOrderStatus,
+  createCategory,
+  createOrder,
+  createProduct,
+  deleteCategory,
+  deleteProduct,
+  listCategories,
+  listOrders,
+  listProducts,
+  listProductsByCategory,
+} from "./app/useCases";
 
 export const router = Router();
 
