@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/gabriel-bonizario/">
+  <a href="https://www.linkedin.com/in/gersonrocha/">
     <img
       alt="Linkedin"
-      src="https://img.shields.io/badge/-Gabriel%20Bonizário-5b0b0d?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gabriel-bonizario/"
+      src="https://img.shields.io/badge/-Gerson%20Rocha-5b0b0d?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gersonrocha/"
     />
   </a>
   <a href="https://www.typescriptlang.org/">
@@ -53,11 +53,10 @@
 
 **WAITER**APP é um software de gerenciamento de pedidos para restaurantes!
 
-Nele, garçons podem anotar pedidos pelo app e enviá-los para o dashboard web, em formato de kanban,
-dividido em 3 colunas: 🕒 Fila de espera, 👨‍🍳 Em produção e ✅ Pronto!
+Nele, os garçons podem anotar pedidos pelo app na mesa dos clientes e enviá-los diretamente para a cozinha em um dashboard web, em formato de Kanban, dividido em 3 colunas: 🕒 Fila de espera, 👨‍🍳 Em produção e ✅ Pronto!
 
 O projeto foi desenvolvido inteiramente em Typescript durante o evento [O Poder do JS](https://opoderdojs.jstack.com.br/),
-ministrado pelo [Mateus Silva](https://www.linkedin.com/in/mateusilva/).
+ministrado pelo [Mateus Silva](https://www.linkedin.com/in/mateusilva/). Além do projeto apresentado no evento, foi implementado por mim as features de criação de categoria e produto de forma interativa por algum gerente no dashboard web.
 
 O frontend web e mobile foram construídos usando React, React Native, Expo, Vite e Styled Components.
 Já a api, usando Node.js, Express e MongoDB.
@@ -86,11 +85,11 @@ Para clonar esse repositório pelo terminal, utilize o [Git](https://git-scm.com
 
 ```bash
 # Clonando por HTTPS
-git clone https://github.com/bonizario/waiter-app.git
+git clone https://github.com/GersonRocha9/pizzaria-app.git
 # Clonando por SSH
-git clone git@github.com:bonizario/waiter-app.git
+git clone git@github.com:GersonRocha9/pizzaria-app.git
 # Entre na pasta do projeto
-cd waiter-app
+cd pizzaria-app
 ```
 
 Para instalar as dependências e executar o projeto, é necessário possuir o [Node.js](https://nodejs.org/) instalado em sua máquina. Neste projeto, foi utilizada a versão LTS [18.12.0](https://nodejs.org/en/blog/release/v18.12.0/).
@@ -173,12 +172,12 @@ _Caso tenha alguma dúvida, confira este [guia de como contribuir no GitHub](htt
 
 # 📝 License
 
-Esse projeto está sob a licença MIT. Consulte [LICENSE](https://github.com/bonizario/waiter-app/blob/master/LICENSE) para mais informações.
+Esse projeto está sob a licença MIT. Consulte [LICENSE](https://github.com/GersonRocha9/pizzaria-app/blob/master/LICENSE) para mais informações.
 
 <br />
 
 # 📮 Entre em contato
 
-**Linkedin**: https://www.linkedin.com/in/gabriel-bonizario/
+**Linkedin**: https://www.linkedin.com/in/gersonrocha/
 
-Desenvolvido por **Gabriel Bonizário** 👋🏻
+Desenvolvido por **Gerson Rocha** 👋🏻
