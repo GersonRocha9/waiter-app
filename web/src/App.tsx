@@ -1,4 +1,4 @@
-import { Header } from "./components/Header";
+import { Header, Orders } from "./components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 export function App() {
@@ -6,6 +6,7 @@ export function App() {
     <>
       <GlobalStyles />
       <Header />
+      <Orders />
     </>
   );
 }
