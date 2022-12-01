@@ -19,7 +19,7 @@ export function OrdersBoard({ icon, title, orders }: OrdersBoardProps) {
   }
 
   function handleCloseModal() {
-    setIsOpenModal(true);
+    setIsOpenModal(false);
     setSelectedOrder(null);
   }
 

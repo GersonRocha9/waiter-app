@@ -29,3 +29,27 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const Actions = styled.footer`
+  display: flex;
+  gap: 8px;
+  margin-top: 32px;
+
+  .primary {
+    background: #333;
+    border-radius: 48px;
+    border: 0;
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: 0.2s;
+
+    &:hover {
+      transition: 0.2s;
+      transform: scale(1.05);
+    }
+  }
+`;
