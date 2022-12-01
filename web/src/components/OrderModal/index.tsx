@@ -1,7 +1,7 @@
 import closeIcon from "../../assets/images/close-icon.svg";
 import { Order } from "../../types/Order";
 import { formatCurrency } from "../../utils/formatCurrency";
-import { ModalBody, OrderDetails, Overlay } from "./styles";
+import { Actions, ModalBody, OrderDetails, Overlay } from "./styles";
 
 interface OrderModalProps {
   isOpen: boolean;
@@ -75,6 +75,17 @@ export function OrderModal({ isOpen, order }: OrderModalProps) {
             <strong>{formatCurrency(total)}</strong>
           </div>
         </OrderDetails>
+
+        <Actions>
+          <button className="primary" type="button">
+            <span>👨‍🍳</span>
+            <strong>Iniciar Produção</strong>
+          </button>
+
+          <button className="secondary" type="button">
+            <strong>Cancelar Pedido</strong>
+          </button>
+        </Actions>
       </ModalBody>
     </Overlay>
   );
