@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import closeIcon from "../../assets/images/close-icon.svg";
 import { Order } from "../../types/Order";
 import { formatCurrency } from "../../utils/formatCurrency";
@@ -6,9 +7,25 @@ import { Actions, ModalBody, OrderDetails, Overlay } from "./styles";
 interface OrderModalProps {
   isOpen: boolean;
   order: Order | null;
+  onClose: () => void;
 }
 
-export function OrderModal({ isOpen, order }: OrderModalProps) {
+export function OrderModal({ isOpen, order, onClose }: OrderModalProps) {
+  // função de fechar modal ao apertar ESC
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   if (!isOpen || !order) {
     return null;
   }
@@ -23,7 +40,7 @@ export function OrderModal({ isOpen, order }: OrderModalProps) {
         <header>
           <strong>Mesa 2</strong>
 
-          <button type="button">
+          <button type="button" onClick={onClose}>
             <img src={closeIcon} alt="Botão de fechar o modal" />
           </button>
         </header>

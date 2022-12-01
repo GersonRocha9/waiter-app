@@ -19,19 +19,10 @@ export const orders: Order[] = [
   },
 
   {
-    _id: "6372e48cbcd195b0d3d0f7f3",
+    _id: "6372e48cbce195b0d3d0f7f3",
     table: "123",
     status: "IN_PRODUCTION",
     products: [
-      {
-        product: {
-          name: "Pizza quatro queijos",
-          imagePath: "1669823985141-quatro-queijos.png",
-          price: 40,
-        },
-        quantity: 3,
-        _id: "6372e48cbcd195b0d3d0f7f4",
-      },
       {
         product: {
           name: "Pizza quatro queijos",
