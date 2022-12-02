@@ -49,7 +49,7 @@ export function Header() {
               type="button"
               onClick={handleCreateProductOpenModal}
             >
-              <strong>Adicionar Produto</strong>
+              <strong>➕ Adicionar Produto</strong>
             </button>
 
             <button
@@ -57,7 +57,7 @@ export function Header() {
               type="button"
               onClick={handleCreateCategoryOpenModal}
             >
-              <strong>Adicionar Categoria</strong>
+              <strong>➕ Adicionar Categoria</strong>
             </button>
           </Actions>
         </div>
