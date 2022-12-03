@@ -1,0 +1,439 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "WaiterApp - O app do garçom!",
+    "decription": "Essa API tem como objetivo o gerenciamento de pedidos de uma pizzaria e lanchonete da região.",
+    "contact": {
+      "email": "gersonrocha9@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "API Local"
+    }
+  ],
+  "paths": {
+    "/categories": {
+      "post": {
+        "summary": "Cadastro de categoria",
+        "description": "Essa rota será responsável por cadastrar uma nova categoria",
+        "tags": ["Categories"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Categorie"
+              },
+              "examples": {
+                "categorie": {
+                  "value": {
+                    "name": "Pizza",
+                    "icon": "🍕"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Name or icon are required"
+          },
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Categorie"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de categorias cadastradas",
+        "description": "Essa rota será responsável por listar todas as categorias",
+        "tags": ["Categories"],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Categorie"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{categoryId}": {
+      "delete": {
+        "summary": "Exclusão de uma categoria pelo ID",
+        "description": "Essa rota será responsável por deletar uma categoria pelo ID",
+        "tags": ["Categories"],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "decription": "ID da Categoria",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "204": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Categorie"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{categoryId}/products": {
+      "get": {
+        "summary": "Busca de produtos relacionados a uma categoria específica",
+        "description": "Essa rota será responsável por listar todos os produtos que pertencem a uma categoria",
+        "tags": ["Categories"],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "decription": "ID da Categoria",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "204": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Categorie"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "post": {
+        "summary": "Cadastro de produto",
+        "description": "Essa rota será responsável por cadastrar uma novo produto",
+        "tags": ["Products"],
+        "requestBody": {
+          "content": {
+            "multipart": {
+              "schema": {
+                "$ref": "#/components/schemas/Categorie"
+              },
+              "examples": {
+                "categorie": {
+                  "value": {
+                    "name": "Coca Cola Zero 2L",
+                    "description": "Refrigerante de cola sem açúcar de 2 litros",
+                    "image": "https://static.paodeacucar.com/img/uploads/1/643/20247643.jpg",
+                    "price": 10,
+                    "category": "63874fa038a24f8f92f8a1a1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de produtos cadastrados",
+        "description": "Essa rota será responsável por listar todos os produtos",
+        "tags": ["Products"],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{productId}": {
+      "delete": {
+        "summary": "Exclusão de uma produto pelo ID",
+        "description": "Essa rota será responsável por deletar um produto pelo ID",
+        "tags": ["Categories"],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "decription": "ID do Produto",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "204": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "summary": "Cadastro de Pedido",
+        "description": "Essa rota será responsável por cadastrar um novo pedido",
+        "tags": ["Orders"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              },
+              "examples": {
+                "categorie": {
+                  "value": {
+                    "table": "23",
+                    "products": [
+                      {
+                        "product": "63877df1957531b816c5fc06",
+                        "quantity": "1"
+                      },
+                      { "product": "638781b51ac47f1c8472fe78", "quantity": "2" }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de pedidos cadastrados",
+        "description": "Essa rota será responsável por listar todas os pedidos",
+        "tags": ["Orders"],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}": {
+      "delete": {
+        "summary": "Exclusão de uma pedido pelo ID",
+        "description": "Essa rota será responsável por deletar um pedido pelo ID",
+        "tags": ["Orders"],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "decription": "ID do Pedido",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "204": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Alteração de status de um pedido",
+        "description": "Essa rota será responsável por alterar o status do pedido pelo ID",
+        "tags": ["Orders"],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "decription": "ID do Pedido",
+            "required": "true"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              },
+              "examples": {
+                "categorie": {
+                  "value": {
+                    "status": "IN_PRODUCTION"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Error on API call"
+          },
+          "204": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Categorie": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "Products": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "category": {
+            "type": "string"
+          },
+          "imagePath": {
+            "type": "string",
+            "format": "binary"
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "table": {
+            "type": "string"
+          },
+          "products": {
+            "type": [
+              {
+                "product": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "number"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
